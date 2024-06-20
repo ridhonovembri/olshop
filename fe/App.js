@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import StackNavigator from "./apps/navigations/StackNavigator";
+import Sandbox from "./apps/components/Sandbox";
+
+import { BasketContext } from "./apps/context/Context";
+import ProductType from "./apps/components/ProductType";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      {/* <ProductType /> */}
+      <BasketContext>
+        <StackNavigator />
+      </BasketContext>
+      {/* <Sandbox /> */}
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
